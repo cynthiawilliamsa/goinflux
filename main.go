@@ -27,7 +27,7 @@ func main() {
 	server := newServer()
 	log.Printf("service listening on port %d", Port)
 	Address := fmt.Sprintf(":%d", Port)
-	if err := http.ListenAndServe(Address, corsWrapper.Handler(server.router)); err != nil {
+	if err := http.ListenAndServe(Address, server.router); err != nil {
 		log.Printf("server startup failed with error: %v\n, err", err)
 	}
 }
