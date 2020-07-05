@@ -1,12 +1,14 @@
-# This configuration file tests main pkg for
-#the goinflux project
+# This file configures Travis CI to test the repo
 language: go
   
 go:
   - 1.14.x
-#Install dependencies
+
+
+# Install takes steps to ensure dependencies are in place.
 install:
-    - github.com/gorilla/handlers
+  - go get -t -v
+
 
 script: 
-    - go test -v
+  - go test -v && go run .
