@@ -1,0 +1,12 @@
+# This configuration file tests main pkg for
+#the goinflux project
+language: go
+  
+go:
+  - 1.14.x
+#Install dependencies
+install:
+    - github.com/gorilla/handlers
+
+script: 
+    - go test -v
