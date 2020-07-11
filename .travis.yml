@@ -3,12 +3,7 @@ language: go
   
 go:
   - 1.14.x
-
-
-# Install takes steps to ensure dependencies are in place.
-install:
-  - go get -t -v
-
-
 script: 
-  - go test -v && go run .
+  - go test -v
+notifications:
+  email: true
