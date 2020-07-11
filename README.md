@@ -1,5 +1,3 @@
-[https://travis-ci.com/cynthiawilliamsa/goinflux.svg?branch=master]
-
 [![Build Status](https://travis-ci.com/cynthiawilliamsa/goinflux.svg?branch=master)](https://travis-ci.com/cynthiawilliamsa/goinflux)
 
 ## GoInflux
