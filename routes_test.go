@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"net/http/httptest"
+	"reflect"
 	"strings"
 	"testing"
 )
@@ -39,6 +40,29 @@ func Test_handleVersion(t *testing.T) {
 			}
 			if !strings.Contains(rr.Body.String(), tt.wantError) {
 				t.Errorf("handler returned unexpected body: got %v, should contain %v", rr.Body.String(), tt.wantError)
+			}
+		})
+	}
+}
+
+func Test_server_ListContainers(t *testing.T) {
+	type fields struct {
+		router *http.ServeMux
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   http.HandlerFunc
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			s := &server{
+				router: tt.fields.router,
+			}
+			if got := s.ListContainers(); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("server.ListContainers() = %v, want %v", got, tt.want)
 			}
 		})
 	}

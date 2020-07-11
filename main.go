@@ -19,11 +19,12 @@ type server struct {
 func newServer() *server {
 	s := &server{}
 	s.router = http.DefaultServeMux
-	s.routes()
+	s.Routes()
 	return s
 }
 
 func main() {
+	// fmt.Println(ListContainers())
 	server := newServer()
 	log.Printf("service listening on port %d", Port)
 	Address := fmt.Sprintf(":%d", Port)
